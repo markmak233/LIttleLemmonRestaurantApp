@@ -54,6 +54,7 @@ struct PersistenceController {
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
     
+//    clean the data Record
     func clear() {
         // Delete all dishes from the store
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Dish")
@@ -61,6 +62,7 @@ struct PersistenceController {
         let _ = try? container.persistentStoreCoordinator.execute(deleteRequest, with: container.viewContext)
     }
     
+//    get dish Menu
     static func oneDish() -> Dish {
         let dish = Dish(context: shared.container.viewContext)
         dish.title = "Greek Salad"

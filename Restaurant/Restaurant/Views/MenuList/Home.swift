@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Home: View {
     @Environment(\.managedObjectContext) private var viewContext
-    
+//    home screen for the menu
     var body: some View {
         TabView{
             NavigationStack{

@@ -49,9 +49,11 @@ struct Menu: View {
                 }.frame(maxHeight: 50)
                 VStack{
                     Header()
+//                    seach box
                     TextField("Search", text: $searchText).textFieldStyle(.roundedBorder).padding(.horizontal)
-                    Text("Order Your Delivery").font(.title2).foregroundColor(.color3)
+                    Text("Order Your Delivery").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).foregroundColor(.color3)
                     ScrollView(.horizontal, showsIndicators: false) {
+//                        button group
                         HStack(spacing: 20) {
                             Toggle("Starters", isOn: $startersIsEnabled)
                             Toggle("Mains", isOn: $mainsIsEnabled)
@@ -66,7 +68,7 @@ struct Menu: View {
             
             
 
-            
+//fetch dish list
             FetchedData(predicate: buildPredicate(),
                         sortDescriptors: buildSortDescriptors()){
                 (dishes: [Dish]) in
@@ -99,7 +101,7 @@ struct Menu: View {
 
         
     
-    
+//    sort descriptor base on tittle
     func buildSortDescriptors() -> [NSSortDescriptor] {
         return [NSSortDescriptor(key: "title",
                                   ascending: true,

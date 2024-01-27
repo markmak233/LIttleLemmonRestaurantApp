@@ -35,7 +35,7 @@ struct ProfileView:View {
                 Button("Change") {}.buttonStyle(GreenButtonStyle())
                 Button("Remove"){}.buttonStyle(CancelButtonStyle())
             }.padding()
-            
+//            name space
             Text("FirstName").InputTextHintStyle()
             TextField("FirstName",text: $firstName)
             
@@ -56,7 +56,7 @@ struct ProfileView:View {
                         .padding(.leading)
                 }
             }
-            
+//            selection
             Text("Email Notiification")
             VStack{
                 Toggle("Order statuses", isOn: $orderStatuses).toggleStyle(CheckBoxStyle())
@@ -65,6 +65,7 @@ struct ProfileView:View {
                 Toggle("Newsletter", isOn: $newsletter).toggleStyle(CheckBoxStyle())
                 
             }
+//            buttons
             Button("Log Out"){
                 UserDefaults.standard.set(false, forKey: IsLoggedIn)
                 UserDefaults.standard.set("", forKey: logInLastName)

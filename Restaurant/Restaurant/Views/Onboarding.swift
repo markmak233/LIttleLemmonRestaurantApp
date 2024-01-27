@@ -24,6 +24,7 @@ struct Onboarding: View {
         NavigationStack{
             ScrollView(.vertical,showsIndicators: false){
                 VStack{
+//                    header
                     VStack{
                         Spacer()
                         Image("Logo")
@@ -32,7 +33,7 @@ struct Onboarding: View {
                         Spacer().padding()
                     }.background(.color1)
                     VStack{
-                        
+//                        fill in form
                         NavigationLink(destination: Home(), isActive: $isLogIn){}
                         Text("First Name").InputTextHintStyle()
                         TextField("First Name", text: $afirstName)
@@ -42,7 +43,7 @@ struct Onboarding: View {
                         TextField("Email", text: $email).keyboardType(.emailAddress)
                         
                     }.padding()
-                    
+//                    if there is error contains
                     if profileModel.errorMessageShow{
                         withAnimation(){
                             Text(profileModel.errorMessage).foregroundColor(.red)
@@ -51,6 +52,7 @@ struct Onboarding: View {
                     }
                     
                     Spacer()
+//                    submit button
                     VStack{
                         Button("Register"){
                             if profileModel.validateUserInput(firstName: afirstName, lastName: lastName, email: email) {
@@ -73,6 +75,7 @@ struct Onboarding: View {
                 }
                 
                 .offset(y:14)
+//                keyboard settings
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                     withAnimation {
                         let keyboardRect = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect

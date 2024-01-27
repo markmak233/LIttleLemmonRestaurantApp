@@ -16,7 +16,6 @@ struct FetchedData<T, Content>: View where T : NSManagedObject, Content : View {
   var request: FetchRequest<T>
   var results: FetchedResults<T>{ request.wrappedValue }
     
-  
     init(
     predicate: NSPredicate = NSPredicate(value: true),
     sortDescriptors: [NSSortDescriptor] = [],

@@ -14,19 +14,23 @@ struct FoodItem: View {
     var body: some View {
         HStack {
             VStack {
+//                tittle
                 Text(dish.title ?? "")
                     .frame(maxWidth: .infinity, alignment: .leading)
                 Spacer(minLength: 1)
+//                description
                 Text(dish.descriptionDish ?? "")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.color1)
                     .lineLimit(2)
                 Spacer(minLength: 1)
+//                price
                 Text("$" + (dish.price ?? ""))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundColor(.color1)
                     .monospaced()
             }
+//            image
             AsyncImage(url: URL(string: dish.image ?? "")) { image in
                 image
                     .resizable()
